@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="vp" name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=0.1, maximum-scale=8">
+<title>Viewer</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #8a8f98; -webkit-text-size-adjust: 100%; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  #msg { font: 16px sans-serif; color: #fff; padding: 24px; text-align: center; }
+  #root { padding: 0; }
+  /* Word pages */
+  .docx-wrapper { padding: 8px !important; background: #8a8f98 !important; }
+  .docx-wrapper > section.docx { box-shadow: 0 1px 6px rgba(0,0,0,.45) !important; margin-bottom: 10px !important; }
+  /* Excel sheets */
+  .sheet { background: #fff; margin: 8px; display: block; width: -webkit-max-content; width: max-content; box-shadow: 0 1px 6px rgba(0,0,0,.45); }
+  .sheetTitle { font: bold 15px sans-serif; color: #1f2d3d; padding: 8px 10px; background: #eef1f6; border-bottom: 1px solid #cfd6e2; }
+  .sheet table { border-collapse: collapse; table-layout: fixed; background: #fff; }
+  .sheet td { overflow: hidden; padding: 1px 3px; box-sizing: border-box; font-family: Calibri, Arial, sans-serif; font-size: 11pt; }
+  .sheetWrap { display: block; }
+  /* PowerPoint slides */
+  .slide { position: relative; overflow: hidden; margin: 8px auto 10px auto; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.45); }
+  .slide * { box-sizing: border-box; }
+  @media print {
+    html, body { background: #fff !important; }
+    .docx-wrapper { background: none !important; padding: 0 !important; }
+    .docx-wrapper > section.docx { box-shadow: none !important; margin: 0 !important; break-after: page; }
+    .sheet, .slide { box-shadow: none !important; margin: 0 !important; break-after: page; }
+    .sheetTitle { background: none; }
+  }
+</style>
+</head>
+<body>
+<div id="msg">Loading…</div>
+<div id="root"></div>
+<script src="lib/jszip.min.js" onerror="window.__missing=(window.__missing||[]).concat('jszip')"></script>
+<script src="lib/docx-preview.min.js" onerror="window.__missing=(window.__missing||[]).concat('docx-preview')"></script>
+<script src="lib/exceljs.min.js" onerror="window.__missing=(window.__missing||[]).concat('exceljs')"></script>
+<script src="lib/html2canvas.min.js" onerror="window.__missing=(window.__missing||[]).concat('html2canvas')"></script>
+<script src="viewer.js"></script>
+</body>
+</html>

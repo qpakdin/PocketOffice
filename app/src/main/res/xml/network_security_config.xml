@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- The converter runs on this phone (127.0.0.1) or on a PC in your own network, over plain http. -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
